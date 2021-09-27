@@ -1,0 +1,36 @@
+class Superclass:
+    'kode program program inheritance'
+    'Wawan H Nur, 20 Mei 2015'
+    
+    'mendefiniskasan kelas super class'
+    def _init_(self):
+        print ("Memanggil konstruktor super class")
+
+    def superclassMethod(self):
+        print ('Memanggil model super class')
+
+    def setAttr(self, attr):
+        Superclass.superclassAttr = attr
+
+    def getAttr(self):
+        print ('Atribut superclass : ', Superclass.superclassAttr)
+
+class Subclass(Superclass):
+
+    def _init_(self):
+        print ('Memanggil konstruktor sub class')
+
+    def subclassMethod(self):
+        print ('Memanggil metod sub class')
+
+c = Subclass()
+c.subclassMethod()
+c.superclassMethod()
+c.setAttr(200)
+c.getAttr()
+
+c = Superclass()
+
+#check sub class
+if (issubclass(Subclass, Superclass)):
+    print ('true')
